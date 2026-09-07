@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f3efe8" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23efc0c5'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-size='46' fill='%239b6a60'%3E✳%3C/text%3E%3C/svg%3E" />
+    <title>脆皮捏捏实验室 · Crunchy Squish Lab</title>
+  </head>
+  <body>
+    <main id="app">
+      <canvas id="scene" aria-label="可按压的小熊：按住加深，拖动揉捏"></canvas>
+      <header><a class="brand" href="./"><span class="brand-icon">✳</span><span>CRUNCHY<br>SQUISH LAB<span class="brand-cn">脆皮捏捏实验室</span></span></a><span class="edition">A LITTLE MOMENT OF SOFTNESS<br><span>VOL. 01 / STRAWBERRY CREAM</span></span></header>
+      <section class="intro"><span class="eyebrow">捏一下，世界慢一点。</span><h1>今天，<br>软一点也没关系。</h1><p>薄薄的脆，软软的心。<br>把一点点压力，留在这里。</p></section>
+      <aside class="specimen"><span class="small-dot"></span> 草莓奶油小熊 <span class="number">N° 001</span></aside>
+      <div class="hint" id="hint"><span class="hint-dot"></span><span id="hint-text">按住慢慢压 · 拖动揉一揉</span></div>
+      <footer><span class="footer-note">MADE TO BE SQUISHED.<br><span>不必完好，也很可爱。</span></span><div class="controls"><button id="sound" aria-pressed="true" title="切换声音"><span id="sound-icon">◖))</span><span id="sound-text">声音开启</span></button><span class="separator"></span><button id="reset"><span class="reset-icon">↻</span> 换一个新的</button></div></footer>
+      <div id="error" role="alert" hidden></div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
