@@ -6,6 +6,27 @@
     <meta name="theme-color" content="#f3efe8" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23efc0c5'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-size='46' fill='%239b6a60'%3E✳%3C/text%3E%3C/svg%3E" />
     <title>脆皮捏捏实验室 · Crunchy Squish Lab</title>
+    <script>
+      // Source modules need Vite's HTTP server; file:// cannot load them.
+      if (location.protocol === 'file:') {
+        document.documentElement.classList.add('local-file');
+        document.addEventListener('DOMContentLoaded', () => {
+          const message = document.createElement('section');
+          message.id = 'launch-help';
+          message.innerHTML = '<span>CRUNCHY SQUISH LAB</span><h1>差一步，就能捏啦。</h1><p>这是开发用的 HTML，不能直接双击运行。<br>请回到项目文件夹，双击 <strong>启动捏捏.cmd</strong>，网页会自动打开。</p><a href="http://127.0.0.1:5173/">服务已启动？点击进入捏捏 →</a><p class="launch-note">首次启动需要已安装 Node.js，并联网安装依赖。<br>游玩时请保留启动窗口；关闭窗口会停止服务。</p>';
+          document.body.append(message);
+        });
+      }
+    </script>
+    <style>
+      html.local-file, .local-file body{margin:0;min-height:100%;background:#f3efe8;color:#534942;font-family:'Segoe UI','Microsoft YaHei',sans-serif}
+      .local-file #app{display:none!important}
+      #launch-help{box-sizing:border-box;max-width:660px;margin:14vh auto;padding:40px;line-height:2}
+      #launch-help>span{font-size:12px;letter-spacing:3px;color:#ac8274}
+      #launch-help h1{font-size:32px;font-weight:400;letter-spacing:2px}
+      #launch-help p{font-size:15px}#launch-help a{display:inline-block;margin:16px 0;padding:12px 24px;border-radius:30px;background:#e8c5b7;color:#534942;text-decoration:none}
+      #launch-help .launch-note{font-size:12px;color:#92867a}
+    </style>
   </head>
   <body>
     <main id="app">
