@@ -7,8 +7,8 @@ const assert = require('node:assert/strict');
     const errors=[]; page.on('pageerror',e=>errors.push(e.message));
     await page.goto('http://127.0.0.1:5173/');
     const state=()=>page.evaluate(()=>{const a=document.querySelector('#background-music');return {paused:a.paused,time:a.currentTime,volume:a.volume,loop:a.loop,pressed:document.querySelector('#music').getAttribute('aria-pressed')};});
-    assert.equal((await state()).paused,true);
-    await page.click('#music');
+    assert.equal((await state()).pressed,'true');
+    await page.click('#reset');
     await page.waitForFunction(()=>document.querySelector('#background-music').currentTime>.2);
     assert.equal((await state()).pressed,'true');
     assert.equal((await state()).loop,true);
@@ -31,6 +31,6 @@ const assert = require('node:assert/strict');
     const box=await page.locator('.controls').boundingBox();
     assert.ok(box.x>=0 && box.x+box.width<=375);
     assert.deepEqual(errors,[]);
-    console.log('PASS: default off, playback, loop wrap, pause/resume, independent effects, reset/switch persistence, mobile fit; zero page errors.');
+    console.log('PASS: default enabled, playback, loop wrap, pause/resume, independent effects, reset/switch persistence, mobile fit; zero page errors.');
   } finally {await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});
