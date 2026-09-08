@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import './style.css';
 import './picker.css';
+import './music.js';
 import { SquishAudio } from './audio.js';
 import { WaxShell } from './wax-shell.js';
 import { TOYS, buildToy } from './toys.js';
@@ -173,7 +174,7 @@ canvas.addEventListener('pointermove',event=>{
 });
 canvas.addEventListener('pointerup',release);canvas.addEventListener('pointercancel',release);canvas.addEventListener('lostpointercapture',release);window.addEventListener('blur',release);
 document.addEventListener('visibilitychange',()=>{if(document.hidden)release();});
-document.querySelector('#sound').addEventListener('click',()=>{const enabled=audio.toggle();audio.unlock();document.querySelector('#sound').setAttribute('aria-pressed',String(enabled));document.querySelector('#sound-text').textContent=enabled?'声音开启':'声音关闭';document.querySelector('#sound-icon').textContent=enabled?'◖))':'◖×';});
+document.querySelector('#sound').addEventListener('click',()=>{const enabled=audio.toggle();audio.unlock();document.querySelector('#sound').setAttribute('aria-pressed',String(enabled));document.querySelector('#sound-text').textContent=enabled?'音效开启':'音效关闭';document.querySelector('#sound-icon').textContent=enabled?'◖))':'◖×';});
 document.querySelector('#reset').addEventListener('click',()=>{
   release();fields.length=0;
   geometryDirty=true;

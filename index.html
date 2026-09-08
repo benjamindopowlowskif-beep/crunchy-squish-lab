@@ -15,7 +15,8 @@
       <aside class="toy-picker" aria-label="选择捏捏"><div class="picker-heading">选一只，捏一会儿 <span>05</span></div><div id="toy-options"></div><p class="picker-note">每次切换，都是完好的一只。</p></aside>
       <div class="specimen"><span id="specimen-name">蜜桃团团</span><span id="specimen-detail">蜜桃凝胶 · 细碎薄壳</span></div>
       <div class="hint" id="hint"><span class="hint-dot"></span><span id="hint-text">按住慢慢压 · 拖动揉一揉</span></div>
-      <footer><span class="footer-note">MADE TO BE SQUISHED.<br><span>不必完好，也很可爱。</span></span><div class="controls"><button id="sound" aria-pressed="true" title="切换声音"><span id="sound-icon">◖))</span><span id="sound-text">声音开启</span></button><span class="separator"></span><button id="reset"><span class="reset-icon">↻</span> 换一个新的</button></div></footer>
+      <audio id="background-music" src="/audio/cream-cloud.wav" preload="none" loop></audio>
+      <footer><span class="footer-note">MADE TO BE SQUISHED.<br><span>不必完好，也很可爱。</span></span><div class="controls"><button id="music" aria-pressed="false" title="开启背景音乐：奶油云朵"><span aria-hidden="true">♫</span><span id="music-text">音乐关闭</span></button><span class="separator"></span><button id="sound" aria-pressed="true" title="切换捏捏音效"><span id="sound-icon">◖))</span><span id="sound-text">音效开启</span></button><span class="separator"></span><button id="reset"><span class="reset-icon">↻</span> 换一个新的</button></div></footer>
       <div id="error" role="alert" hidden></div>
     </main>
     <script type="module" src="/src/main.js"></script>

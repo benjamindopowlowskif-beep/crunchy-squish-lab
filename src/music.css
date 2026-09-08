@@ -1,0 +1,4 @@
+@media(max-width:760px){
+  .controls{padding:6px;max-width:100%}
+  .controls button{padding:12px 9px;gap:5px;white-space:nowrap}
+}
