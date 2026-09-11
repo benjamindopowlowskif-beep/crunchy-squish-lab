@@ -1,11 +1,11 @@
 import * as THREE from 'three';
 
 export const TOYS = [
-  {id:'peach',name:'蜜桃团团',subtitle:'蜜桃凝胶 · 细碎薄壳',image:'/concepts/peach.png',shell:0xeea4b0,gel:0xc26583,depth:.46,rebound:1.8,drag:.60,radius:.51,density:1.25,speed:1.3,thickness:.014,lift:.07,split:1.0,beadSize:.024,beadColors:[0xffedd8,0xf7c4d2,0xe8a1bd]},
-  {id:'bunny',name:'奶冻垂耳兔',subtitle:'紫色奶冻 · 绵软折叠',image:'/concepts/bunny.png',shell:0xf5e1b9,gel:0x9474b6,depth:.50,rebound:1.5,drag:.78,radius:.57,density:1.05,speed:1.05,thickness:.017,lift:.10,split:1.4,beadSize:.029,beadColors:[0xc3a5e7,0xe5d6f5,0x9872be]},
-  {id:'pudding',name:'焦糖布丁猫',subtitle:'金黄奶馅 · 浓稠慢揉',image:'/concepts/pudding.png',shell:0xf3c665,gel:0xc99440,depth:.54,rebound:1.25,drag:.95,radius:.60,density:.8,speed:.85,thickness:.033,lift:.055,split:1.8,beadSize:.034,beadColors:[0xe4a327,0xf2cc6e,0xffdfa1]},
-  {id:'orange',name:'橘子小啾',subtitle:'橙色果冻 · 弹润大珠',image:'/concepts/orange.png',shell:0xea9537,gel:0xd88728,depth:.34,rebound:2.9,drag:.25,radius:.44,density:.9,speed:1.15,thickness:.027,lift:.08,split:1.15,beadSize:.053,beadColors:[0xf0a52c,0xffd063,0xecb447]},
-  {id:'bear',name:'草莓奶油小熊',subtitle:'树莓软心 · 奶油蜡壳',image:'/concepts/bear.png',shell:0xf2c8af,gel:0x9d4861,depth:.41,rebound:2.05,drag:.32,radius:.49,density:1,speed:1,thickness:.023,lift:.065,split:1.35,beadSize:.023,beadColors:[0xffe2aa,0xf59aae,0xaa2854]},
+  {id:'peach',name:'蜜桃团团',subtitle:'蜜桃凝胶 · 细碎薄壳',image:'/concepts/peach.webp',shell:0xeea4b0,gel:0xc26583,depth:.46,rebound:1.8,drag:.60,radius:.51,density:1.25,speed:1.3,thickness:.014,lift:.07,split:1.0,beadSize:.024,beadColors:[0xffedd8,0xf7c4d2,0xe8a1bd]},
+  {id:'bunny',name:'奶冻垂耳兔',subtitle:'紫色奶冻 · 绵软折叠',image:'/concepts/bunny.webp',shell:0xf5e1b9,gel:0x9474b6,depth:.50,rebound:1.5,drag:.78,radius:.57,density:1.05,speed:1.05,thickness:.017,lift:.10,split:1.4,beadSize:.029,beadColors:[0xc3a5e7,0xe5d6f5,0x9872be]},
+  {id:'pudding',name:'焦糖布丁猫',subtitle:'金黄奶馅 · 浓稠慢揉',image:'/concepts/pudding.webp',shell:0xf3c665,gel:0xc99440,depth:.54,rebound:1.25,drag:.95,radius:.60,density:.8,speed:.85,thickness:.033,lift:.055,split:1.8,beadSize:.034,beadColors:[0xe4a327,0xf2cc6e,0xffdfa1]},
+  {id:'orange',name:'橘子小啾',subtitle:'橙色果冻 · 弹润大珠',image:'/concepts/orange.webp',shell:0xea9537,gel:0xd88728,depth:.34,rebound:2.9,drag:.25,radius:.44,density:.9,speed:1.15,thickness:.027,lift:.08,split:1.15,beadSize:.053,beadColors:[0xf0a52c,0xffd063,0xecb447]},
+  {id:'bear',name:'草莓奶油小熊',subtitle:'树莓软心 · 奶油蜡壳',image:'/concepts/bear.webp',shell:0xf2c8af,gel:0x9d4861,depth:.41,rebound:2.05,drag:.32,radius:.49,density:1,speed:1,thickness:.023,lift:.065,split:1.35,beadSize:.023,beadColors:[0xffe2aa,0xf59aae,0xaa2854]},
 ];
 
 // Sculpted parametric surfaces remain shared with the breakable wax layer.

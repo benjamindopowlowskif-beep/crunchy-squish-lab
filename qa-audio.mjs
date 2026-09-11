@@ -2,7 +2,7 @@ import {renderTexture,SOUND_PROFILES} from './src/audio.js';
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
 const require=createRequire(import.meta.url);
-const {chromium}=require('C:/Users/xiaoxiami/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const {launchChrome}=require('./qa-browser.cjs');
 const metrics={};
 for(const id of Object.keys(SOUND_PROFILES)){
   let seed=12345;const random=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;};
@@ -16,7 +16,7 @@ for(const id of Object.keys(SOUND_PROFILES)){
 assert(metrics.peach.brightness>metrics.pudding.brightness*3,'Crisp/muffled spectra too similar');
 assert(metrics.bunny.duration<.28 && metrics.bunny.rms<.05,'Bunny should be short and quiet');
 console.log(JSON.stringify(metrics,null,2));
-const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+const browser=await launchChrome();
 try{
   const page=await browser.newPage({viewport:{width:1440,height:900}}),errors=[];
   page.on('pageerror',e=>errors.push(e.message));

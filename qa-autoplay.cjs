@@ -1,8 +1,8 @@
-const {chromium}=require('C:/Users/xiaoxiami/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const {launchChrome}=require('./qa-browser.cjs');
 const assert=require('node:assert/strict');
 (async()=>{
   for(const policy of ['no-user-gesture-required','document-user-activation-required']){
-    const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true,args:[`--autoplay-policy=${policy}`]});
+    const browser=await launchChrome({args:[`--autoplay-policy=${policy}`]});
     try {
       const page=await browser.newPage();
       const errors=[];page.on('pageerror',e=>errors.push(e.message));

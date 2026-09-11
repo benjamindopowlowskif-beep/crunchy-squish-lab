@@ -1,7 +1,7 @@
-const { chromium } = require('C:/Users/xiaoxiami/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const { launchChrome } = require('./qa-browser.cjs');
 const assert = require('node:assert/strict');
 (async () => {
-  const browser = await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+  const browser = await launchChrome();
   try {
     const page = await browser.newPage({viewport:{width:1440,height:900}});
     const errors=[]; page.on('pageerror',e=>errors.push(e.message));

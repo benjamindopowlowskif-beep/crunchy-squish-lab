@@ -1,4 +1,4 @@
-const {chromium}=require('C:/Users/xiaoxiami/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const {launchChrome}=require('./qa-browser.cjs');
 const {spawn,spawnSync}=require('node:child_process');
 const {pathToFileURL}=require('node:url');
 const path=require('node:path');
@@ -14,7 +14,7 @@ const assert=require('node:assert/strict');
       launcher.on('error',error=>{clearTimeout(timer);reject(error);});
       launcher.on('exit',code=>{clearTimeout(timer);reject(new Error(`Launcher exited ${code}: ${output}`));});
     });
-    browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+    browser=await launchChrome();
     const page=await browser.newPage({viewport:{width:1440,height:900}});
     for(const file of ['index.html','dist/index.html']){
       await page.goto(pathToFileURL(path.join(__dirname,file)).href);

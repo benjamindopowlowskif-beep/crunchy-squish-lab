@@ -1,6 +1,6 @@
 {
   "name": "crunchy-squish-lab",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "private": true,
   "license": "MIT",
   "homepage": "https://benjamindopowlowskif-beep.github.io/crunchy-squish-lab/",
@@ -13,12 +13,19 @@
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
     "build:pages": "vite build --mode github-pages",
-    "preview": "vite preview --host 127.0.0.1"
+    "preview": "vite preview --host 127.0.0.1",
+    "qa": "node qa.cjs",
+    "qa:variants": "node qa-variants.cjs",
+    "qa:audio": "node qa-audio.mjs",
+    "qa:music": "node qa-music.cjs",
+    "qa:autoplay": "node qa-autoplay.cjs",
+    "qa:entry": "node qa-entry.cjs"
   },
   "dependencies": {
     "three": "0.180.0"
   },
   "devDependencies": {
+    "playwright": "1.62.1",
     "vite": "^8.2.2"
   }
 }

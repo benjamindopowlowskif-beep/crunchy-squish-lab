@@ -106,8 +106,8 @@ export default {
 
 本项目的源代码与配套文档采用 [MIT License](LICENSE)，允许在保留版权和许可证声明的前提下使用、修改和再发布。
 
-`public/concepts/*.png` 与 `public/audio/*.wav` 不属于 MIT 授权范围，版权由 benjamin xiami 保留。查看、Fork 或修改代码不代表获得这些素材的额外使用许可；详细边界见 [素材版权声明](ASSET_LICENSE.md)。
+`public/concepts/*.webp` 与 `public/audio/*.wav` 不属于 MIT 授权范围，版权由 benjamin xiami 保留。查看、Fork 或修改代码不代表获得这些素材的额外使用许可；详细边界见 [素材版权声明](ASSET_LICENSE.md)。
 
 ## 开发验收
 
-`qa.cjs` 是当前机器的开发验收脚本，使用本机 Chrome 和 Codex 自带的 Playwright；其中路径与当前机器相关，不影响应用安装和运行。截图保存在 `.qa/`。主要检查局部形变、慢回弹、立体蜡片、反复按压后的碎化和嵌入、破损保留、重置后几何体数量、声音按钮、桌面和触屏输入、浏览器错误。
+验收脚本使用项目内的 Playwright 依赖并自动调用已安装的 Google Chrome，不包含个人目录或固定的系统路径。先运行 `npm run dev`，再在另一个终端运行 `npm run qa`、`npm run qa:variants`、`npm run qa:audio`、`npm run qa:music` 或 `npm run qa:autoplay`；入口测试可直接运行 `npm run qa:entry`。如 Chrome 安装在非标准位置，可通过 `CHROME_PATH` 环境变量指定。截图保存在 `.qa/`。主要检查局部形变、慢回弹、立体蜡片、反复按压后的碎化和嵌入、破损保留、重置后几何体数量、声音按钮、桌面和触屏输入、浏览器错误。
