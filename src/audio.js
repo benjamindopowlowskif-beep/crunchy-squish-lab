@@ -1,5 +1,10 @@
 import sampleManifest from './samples.js';
 
+function resolveSamplePath(path){
+  if(/^(?:https?:|data:|blob:)/i.test(path))return path;
+  return (import.meta.env?.BASE_URL || '/') + path.replace(/^\/+/, '');
+}
+
 export const SOUND_PROFILES = {
   peach:   {name:'细脆',duration:.21,grains:14,decay:.008,attack:.0008,cutoff:5600,highpass:1000,body:.04,gain:.80,rubDuration:.28,rubCutoff:2300,rubGain:.26},
   bunny:   {name:'轻柔酥裂',duration:.22,grains:7,decay:.015,attack:.004,cutoff:1800,highpass:180,body:.18,gain:.30,rubDuration:.28,rubCutoff:1200,rubGain:.20,crackInterval:.30},
@@ -74,7 +79,7 @@ export class SquishAudio {
     const jobs=[];
     const add=(key,paths)=>jobs.push(Promise.all(paths.map(async path=>{
       try{
-        const response=await fetch(path);if(!response.ok)throw new Error(String(response.status));
+        const response=await fetch(resolveSamplePath(path));if(!response.ok)throw new Error(String(response.status));
         return await this.ctx.decodeAudioData(await response.arrayBuffer());
       }catch{return null;}
     })).then(buffers=>this.samples.set(key,buffers.filter(Boolean))));

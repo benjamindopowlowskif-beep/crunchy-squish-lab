@@ -2,6 +2,8 @@
 
 一个本地运行的 Three.js 单页减压玩具。支持蜜桃团团、奶冻垂耳兔、焦糖布丁猫、橘子小啾与经典小熊五款造型，提供局部持续按压、拖动揉捏、慢回弹、蜡壳破碎与声音开关。
 
+**在线体验：** [GitHub Pages](https://benjamindopowlowskif-beep.github.io/crunchy-squish-lab/)
+
 ## 五款捏捏
 
 桌面右侧面板、手机底部面板可选择不同玩具。默认蜜桃。切换会生成完好的一只，上一款的破损不保留；静音设置在切换时保留。
@@ -39,6 +41,8 @@ npm run preview
 ```
 
 `dist/` 是生产构建结果。请通过 HTTP 服务打开，不要直接双击 HTML。所有运行资源均来自本地，没有在线字体、CDN、后端或外部运行依赖。
+
+推送到 `main` 后，GitHub Actions 会执行 `npm ci` 和 `npm run build:pages`，并将 `dist/` 自动部署到上面的 GitHub Pages 地址。本地开发继续使用根路径，不受仓库子路径影响。
 
 ## 玩法与录屏
 

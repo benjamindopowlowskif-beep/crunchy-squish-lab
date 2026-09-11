@@ -207,7 +207,7 @@ const picker=document.querySelector('#toy-options');
 for(const item of TOYS){
   const button=document.createElement('button');button.className='toy-option';button.dataset.toy=item.id;button.setAttribute('aria-pressed','false');
   const thumb=document.createElement('span');thumb.className='toy-thumb';
-  if(item.image){const image=document.createElement('img');image.src=item.image;image.alt='';thumb.append(image);}else thumb.textContent='ʕ•ᴥ•ʔ';
+  if(item.image){const image=document.createElement('img');image.src=(import.meta.env?.BASE_URL||'/')+item.image.replace(/^\/+/, '');image.alt='';thumb.append(image);}else thumb.textContent='ʕ•ᴥ•ʔ';
   const label=document.createElement('span');label.className='toy-label';
   const name=document.createElement('span');name.textContent=item.name;const detail=document.createElement('small');detail.textContent=item.subtitle;label.append(name,detail);
   button.append(thumb,label);button.addEventListener('click',()=>{if(selected.id!==item.id)selectToy(item.id);});picker.append(button);
